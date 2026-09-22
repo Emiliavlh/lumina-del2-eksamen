@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Krona+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap");
+
+ /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --farve1: #FEF5EF;
+  --farve2: #E1D3C2;
+  --farve3: #F0E4D9;
+  --font-farve: #514237;
+
+  --logo-font: 'Koulen', sans-serif;
+  --overskrift-font: 'Krona One', sans-serif;
+  --brødtekst-font: 'Inria Sans', sans-serif;
+}
+ 
+ 
+ 
+ body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: var(--farve1);
+      font-family: var(--brødtekst-font) sans-serif;
+      text-align: center;
+    }
+    h1 {
+      color: var(--font-farve);
+      margin-bottom: 10px;
+    }
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: var(--font-farve);
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+    a:hover {
+      background: #7a6352;
+    }

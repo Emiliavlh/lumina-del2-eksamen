@@ -1,0 +1,348 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Krona+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap");
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+:root {
+  --farve1: #FEF5EF;
+  --farve2: #E1D3C2;
+  --farve3: #F0E4D9;
+  --font-farve: #514237;
+
+  --logo-font: 'Koulen', sans-serif;
+  --overskrift-font: 'Krona One', sans-serif;
+  --brødtekst-font: 'Inria Sans', sans-serif;
+}
+
+/* Hero sektion */
+.hero {
+    background: linear-gradient(rgba(230, 211, 192, 1), white);
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Navbar */
+/*præsenter dette også*/
+.navbar {
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 15;
+    background: transparent;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+#logo1 {
+    font-family: var(--logo-font);
+    font-size: 40px;
+    font-weight: 200;
+    color: var(--font-farve);
+    letter-spacing: 4px;
+}
+
+#logo2 {
+    font-family: var(--brødtekst-font);
+    font-size: 24px;
+    color: var(--font-farve);
+    letter-spacing: 13px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-family: var(--brødtekst-font);
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--font-farve);
+    transition: 0.3s ease;
+}
+.nav-links a:hover { color: #a08977; }
+
+.cart {
+    width: 24px;
+    height: auto;
+    transition: 0.3s ease;
+}
+.cart:hover { transform: scale(1.1); }
+
+/* Hero indhold */
+.hero-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px;
+    text-align: center;
+    z-index: 1;
+}
+
+/* Præsenter dette hero section */
+.hovedskrift {
+    font-family: var(--overskrift-font);
+    font-size: 12rem;
+    font-weight: 700;
+    color: var(--font-farve);
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+}
+
+.lum { 
+   left: 58%;
+   transform: translate(-130%, -50%); 
+   z-index: 1; 
+   letter-spacing: 40px; }
+.ina { 
+    left: 45%; 
+    transform: translate(30%, -50%);
+    z-index: 3; 
+    letter-spacing: 40px; }
+
+.hero-img {
+    width: 500px;
+    height: auto;
+    position: relative;
+    top: 50%;
+    left: 15%;
+    transform: translate(-55%, -20%);
+    z-index: 2;
+}
+
+/* Knap */
+.knap1 {
+    position: absolute;
+    bottom: 10%;
+    left: 80%;
+    transform: translateX(-50%);
+    padding: 15px 40px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(to right, #514237, #a08977);
+    color: white;
+    font-family: var(--brødtekst-font);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.knap1:hover { transform: translateX(-50%) scale(1.05); }
+
+/*præsentation af hero færdig*/
+
+
+/* Produkt sektion */
+.produkt { 
+    background: #ffffff; 
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;       
+    height: 100vh;             
+    margin: 0;
+}
+
+.product-title {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.speclumina {
+    font-size: 50px;
+    font-family: var(--logo-font);
+    color: #40382e;
+    letter-spacing: 10px;
+}
+.specone {
+    font-size: 35px;
+    font-family: var(--brødtekst-font);
+    color: #40382e;
+    letter-spacing: 10px;
+}
+
+.produktbeskrivelse {
+    font-family: var(--brødtekst-font);
+    font-size: 16px;
+    color: #40382e;
+    margin: 20px 0;
+}
+
+/* FARVEVÆLGER MED STREGER */
+.color-selector {
+    border-top: 2px solid #40382e;
+    border-bottom: 2px solid #40382e;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.colors {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.colors li {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    
+}
+
+/* Farver */
+.moonlight-white { 
+    background-color: #F0E0C7; 
+    border: 3px solid #40382e; 
+}
+.lavender-mist   { 
+    background-color: #D3D3FF; 
+    border: 1px solid black;
+ }
+.dusty-rose      {
+    background-color: #DDA1A1; 
+    border: 1px solid black; 
+  }
+.sage-green      { 
+    background-color: #C5D1B9;
+    border: 1px solid black;
+   }
+
+.color-name {
+    font-size: 18px;
+    font-family: var(--brødtekst-font);
+    color: #40382e;
+}
+
+/* Placering af tekstblok */
+.produktinfo {
+    position: absolute;
+    z-index: 10;
+    width: 400px;
+    left: 5%;
+    top: 130%;
+}
+
+/* Knap: LÆG I KURV */
+.buy {
+    position: absolute;
+    bottom: -40%;
+    left: 80%;
+    transform: translateX(-150%);
+    padding: 15px 40px;
+    border: none;
+    border-radius: 40px;
+    background: var(--font-farve);
+    color: white;
+    font-family: var(--brødtekst-font);
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 200px;
+}
+.buy:hover { transform: translateX(-150%) scale(1.05); }
+
+/* Billeder */
+.trefarver {
+    position: absolute;
+    z-index: 0;
+    width: 550px;
+    left: 55%;
+    top: 135%;
+}
+.billede {
+    position: absolute;
+    top: 110%;
+    left: 55%;
+    z-index: 10;
+    width: 550px;
+    height: auto;
+}
+.pris {
+    position: absolute;
+    bottom: -15%;
+    left: 5%;
+    font-family: var(--brødtekst-font);
+    font-size: 24px;
+    color: #40382e;
+}
+
+/* Andre sektioner */
+.specs { 
+    min-height: 100vh;
+    background: url('../img/futtemus.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--farve1);
+}
+.app { 
+    min-height: 100vh;
+    background: url('../img/diskus.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #e7d2bd;
+    padding: 40px 60px;
+    min-height: 30vh;
+    color: black;
+    font-family: var(--brødtekst-font);
+}
+footer table { width: 100%; 
+  border-collapse: collapse; 
+}
+footer .col { 
+    vertical-align: top;
+    padding-right: 40px; }
+footer h2.logo {
+    font-size: 24px; 
+    letter-spacing: 2px; 
+    margin-bottom: 15px; 
+  }
+footer h3 { 
+    font-size: 14px; 
+    margin-bottom: 10px; 
+    letter-spacing: 1px; }
+footer p { 
+    font-size: 13px; 
+    line-height: 1.8; 
+}
+footer a { 
+    color: black; 
+    text-decoration: none; 
+}
+footer a:hover { 
+    text-decoration: underline;
+ }
+.mail { color: rgb(47, 39, 152); }
