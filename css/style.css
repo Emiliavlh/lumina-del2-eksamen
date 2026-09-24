@@ -10,7 +10,10 @@
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html { 
+    scroll-behavior: smooth; 
+    overflow-x: hidden;
+}
 
 :root {
   --farve1: #FEF5EF;
@@ -155,6 +158,8 @@ body {
     align-items: center;       
     height: 100vh;             
     margin: 0;
+    position: relative;
+    overflow: hidden;
 }
 
 .product-title {
