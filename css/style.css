@@ -24,10 +24,12 @@ html { scroll-behavior: smooth; }
 }
 
 /* Hero sektion */
-.hero {
+
+body {
+    font-family: var(--brødtekst-font);
     background: linear-gradient(rgba(230, 211, 192, 1), white);
-    min-height: 100vh;
-    position: relative;
+    color: var(--font-farve);
+    overflow-x: hidden;
 }
 
 /* Navbar */
@@ -101,35 +103,27 @@ html { scroll-behavior: smooth; }
 }
 
 /* Præsenter dette hero section */
-.hovedskrift {
+.hero-lumina-writing {
     font-family: var(--overskrift-font);
-    font-size: 12rem;
+    font-size: clamp(3rem, 9vw, 12rem);
     font-weight: 700;
     color: var(--font-farve);
     line-height: 1;
     position: absolute;
     top: 50%;
+    letter-spacing: 0.05em;
+    z-index: 20;
 }
-
-.lum { 
-   left: 58%;
-   transform: translate(-130%, -50%); 
-   z-index: 1; 
-   letter-spacing: 40px; }
-.ina { 
-    left: 45%; 
-    transform: translate(30%, -50%);
-    z-index: 3; 
-    letter-spacing: 40px; }
 
 .hero-img {
     width: 500px;
+    max-width: 90vw;
     height: auto;
     position: relative;
     top: 50%;
     left: 15%;
     transform: translate(-55%, -20%);
-    z-index: 2;
+    z-index: 0;
 }
 
 /* Knap */
@@ -346,3 +340,37 @@ footer a:hover {
     text-decoration: underline;
  }
 .mail { color: rgb(47, 39, 152); }
+
+/* Responsivt: mobil */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    padding-top: 120px;
+    gap: 10px;
+  }
+
+  .hovedskrift {
+    position: static;
+    font-size: 4rem;
+  }
+
+  .lum,
+  .ina {
+    left: auto;
+    transform: none;
+    letter-spacing: 10px;
+  }
+
+  .hero-img {
+    width: 80%;
+    max-width: 300px;
+    position: static;
+    transform: none;
+  }
+
+  .knap1 {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+  }
+}
