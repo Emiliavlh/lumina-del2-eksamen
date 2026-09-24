@@ -144,6 +144,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
   padding-top: 150px;
   text-align: center;
   z-index: 1;
@@ -158,6 +159,8 @@ body {
   line-height: 1;
   position: absolute;
   top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   letter-spacing: 0.36em;
   z-index: 20;
 }
@@ -166,10 +169,10 @@ body {
   width: 500px;
   max-width: 90vw;
   height: auto;
-  position: relative;
+  position: absolute;
   top: 50%;
-  left: 15%;
-  transform: translate(-55%, -20%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 0;
 }
 
@@ -405,11 +408,18 @@ footer a:hover {
     gap: 10px;
   }
 
-  .hero-lumina-writing {
+  .hero-visual {
     position: relative;
+    width: 100%;
+  }
+
+  .hero-lumina-writing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: clamp(2.5rem, 12vw, 4rem);
     letter-spacing: 0.25em;
-    margin-bottom: -50px;
     text-shadow: #514237 2px 3px 8px;
     z-index: 20;
   }
@@ -417,8 +427,9 @@ footer a:hover {
   .hero-img {
     width: 80%;
     max-width: 300px;
-    position: relative;
-    left: 0;
+    position: static;
+    top: auto;
+    left: auto;
     transform: none;
     z-index: 0;
   }
