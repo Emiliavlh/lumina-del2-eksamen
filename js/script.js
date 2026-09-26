@@ -36,3 +36,24 @@ if (burgerBtn && navLinks) {
     }
   });
 }
+
+// Læs mere / læs mindre for produktbeskrivelsen
+const laesMereBtn = document.getElementById("laesMereBtn");
+const produktbeskrivelse = document.getElementById("produktbeskrivelse");
+
+if (laesMereBtn && produktbeskrivelse) {
+  const laesMereText = laesMereBtn.querySelector(".laes-mere-text");
+
+  laesMereBtn.addEventListener("click", () => {
+    const isExpanded = produktbeskrivelse.classList.toggle("expanded");
+    laesMereBtn.setAttribute("aria-expanded", String(isExpanded));
+    laesMereText.textContent = isExpanded ? "Læs mindre" : "Læs mere";
+  });
+}
+
+// "KØB NU" i hero – scroller til produktsektionen i stedet for at navigere væk
+const buyNowBtn = document.getElementById("buyNowBtn");
+
+buyNowBtn?.addEventListener("click", () => {
+  document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
+});

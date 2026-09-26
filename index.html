@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lumina Audio</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" href="img/mismismis.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -36,51 +36,50 @@
         <img src="img/basket.svg" alt="Kurv" class="cart">
       </div>
 
-      <div class="nav-overlay" id="navOverlay"></div>
+      <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
     </nav>
   </header>
 
   <main class="hero-content">
-    <div class="hero-visual">
-      <p class="hero-lumina-writing">LUMINA</p>
+    <figure class="hero-visual">
+      <h1 class="hero-lumina-writing">LUMINA</h1>
       <img src="img/hero-pic.webp" alt="Lumina One højtaler" class="hero-img">
-    </div>
-    <a class="knap1">KØB NU</a>
+    </figure>
+    <button type="button" class="knap1" id="buyNowBtn">KØB NU</button>
   </main>
 </section>
 
 <!-- Produkt sektion -->
 <section id="products" class="produkt">
   <article class="produktinfo">
-    <div class="product-title">
-      <h2 class="speclumina">LUMINA</h2>
-      <h2 class="specone">ONE</h2>
-    </div>
+    <h2 class="product-title">LUMINA <span class="specone">ONE</span></h2>
 
-    <p class="produktbeskrivelse">
-      LUMINA One er en bærbar Bluetooth-højttaler, designet som en fusion af skandinavisk elegance og kraftfuld
-      <br>lydteknologi. Den er lavet til at være let, smuk og social, og har funktioner, der passer til den livsstil, 
-      hvor musik er et 
-      <br>fællesskab – ikke bare en baggrund.
+    <p class="produktbeskrivelse" id="produktbeskrivelse">
+      LUMINA One er en bærbar Bluetooth-højttaler, designet som en fusion af skandinavisk elegance og kraftfuld lydteknologi. Den er lavet til at være let, smuk og social, og har funktioner, der passer til den livsstil, hvor musik er et fællesskab – ikke bare en baggrund.
     </p>
+
+    <button type="button" class="laes-mere" id="laesMereBtn" aria-expanded="false" aria-controls="produktbeskrivelse">
+      <span class="laes-mere-text">Læs mere</span>
+      <span class="laes-mere-icon" aria-hidden="true"></span>
+    </button>
 
     <!-- FARVEVÆLGER MED STREGER -->
     <div class="color-selector">
       <ul class="colors">
-        <li class="moonlight-white"></li>
-        <li class="lavender-mist"></li>
-        <li class="dusty-rose"></li>
-        <li class="sage-green"></li>
+        <li><img src="img/beige.webp" alt="Beige" class="color-swatch"></li>
+        <li><img src="img/purple.webp" alt="Lilla" class="color-swatch"></li>
+        <li><img src="img/rose.webp" alt="Rosa" class="color-swatch"></li>
+        <li><img src="img/green.webp" alt="Grøn" class="color-swatch"></li>
       </ul>
-      <p class="color-name">Beige</p>
     </div>
     <p class="pris"> 1995,-</p>
 
-    <a href="tak.html" class="buy">LÆG I KURV</a>
+    <button type="button" class="buy" id="addToCartBtn">LÆG I KURV</button>
   </article>
 
-  <figure><img src="img/mester1.png" alt="Lumina One højtaler" class="billede"></figure>
-  <figure><img src="img/dodstjerne.png" class="trefarver" alt=""></figure>
+  <figure class="produkt-visual">
+    <img src="img/product.webp" alt="Lumina One højtaler" class="billede">
+  </figure>
 </section>
 
 <!-- Specifikationer -->
@@ -145,6 +144,6 @@
   </table>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
