@@ -38,16 +38,16 @@ if (burgerBtn && navLinks) {
 }
 
 // Læs mere / læs mindre for produktbeskrivelsen
-const laesMereBtn = document.getElementById("laesMereBtn");
-const produktbeskrivelse = document.getElementById("produktbeskrivelse");
+const readMoreBtn = document.getElementById("readMoreBtn");
+const productDescription = document.getElementById("productDescription");
 
-if (laesMereBtn && produktbeskrivelse) {
-  const laesMereText = laesMereBtn.querySelector(".laes-mere-text");
+if (readMoreBtn && productDescription) {
+  const readMoreText = readMoreBtn.querySelector(".read-more-text");
 
-  laesMereBtn.addEventListener("click", () => {
-    const isExpanded = produktbeskrivelse.classList.toggle("expanded");
-    laesMereBtn.setAttribute("aria-expanded", String(isExpanded));
-    laesMereText.textContent = isExpanded ? "Læs mindre" : "Læs mere";
+  readMoreBtn.addEventListener("click", () => {
+    const isExpanded = productDescription.classList.toggle("expanded");
+    readMoreBtn.setAttribute("aria-expanded", String(isExpanded));
+    readMoreText.textContent = isExpanded ? "Læs mindre" : "Læs mere";
   });
 }
 
