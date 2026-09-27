@@ -15,6 +15,19 @@ html {
   overflow-x: hidden;
 }
 
+/* Skjuler indhold visuelt, men lader skærmlæsere stadig læse det op */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ===== Variabler ===== */
 :root {
   --farve1: #fef5ef;
@@ -408,8 +421,7 @@ body {
   font-family: var(--brødtekst-font);
   font-size: 13px;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: #7a6a5c;
+  color: var(--font-farve);
   line-height: 1.6;
   margin-bottom: 12px;
 }
