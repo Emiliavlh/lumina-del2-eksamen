@@ -15,18 +15,6 @@ html {
   overflow-x: hidden;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
 /* ===== Variabler ===== */
 :root {
   --farve1: #fef5ef;
@@ -68,7 +56,7 @@ body {
 }
 
 .logo-img {
-  width: 100px;
+  width: 120px;
   height: auto;
   position: static;
 }
@@ -153,7 +141,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 95vh;
   padding-top: 150px;
   text-align: center;
   z-index: 1;
@@ -164,10 +152,10 @@ body {
   font-size: clamp(3rem, 9vw, 12rem);
   font-weight: 700;
   color: var(--font-farve);
-  text-shadow: #514237 2px 3px 8px;
+  text-shadow: 0.02em 0.03em 0.06em rgba(81, 66, 55, 0.5);
   line-height: 1;
   position: absolute;
-  top: 50%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   letter-spacing: 0.36em;
@@ -179,16 +167,15 @@ body {
   max-width: 90vw;
   height: auto;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 60%;
   transform: translate(-50%, -50%);
   z-index: 0;
 }
 
 .buy-now-btn {
   position: absolute;
-  bottom: 10%;
-  left: 80%;
+  bottom: 1%;
+  left: 15%;
   transform: translateX(-50%);
   padding: 15px 40px;
   border: none;
@@ -196,7 +183,7 @@ body {
   background: linear-gradient(to right, #514237, #a08977);
   color: white;
   font-family: var(--brødtekst-font);
-  font-size: 16px;
+  font-size: 22px;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -268,15 +255,40 @@ body {
 }
 
 .color-swatch {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
+  padding: 0;
+  border: 1px solid #40382e;
   border-radius: 50%;
+  background: none;
+  font-family: var(--brødtekst-font);
+  font-size: 8px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1;
+  color: #40382e;
   cursor: pointer;
   transition: 0.3s ease;
 }
 .color-swatch:hover {
-  transform: scale(1.20);
+  transform: scale(1.2);
+}
+
+.color-swatch--beige {
+  background-color: #f0e0c7;
+}
+.color-swatch--purple {
+  background-color: #d3d3ff;
+}
+.color-swatch--rose {
+  background-color: #dda1a1;
+}
+.color-swatch--green {
+  background-color: #c5d1b9;
 }
 
 .price {
@@ -376,6 +388,11 @@ footer a:hover {
 /* ===== Responsivt: mobil (≤768px) ===== */
 @media (max-width: 768px) {
   /* --- Navbar --- */
+  .logo-img {
+  width: 80px;
+  height: auto;
+  position: static;
+  }
   .nav-right {
     gap: 16px;
   }
@@ -430,8 +447,8 @@ footer a:hover {
   /* --- Hero sektion --- */
   .hero-content {
     flex-direction: column;
-    padding-top: 120px;
-    gap: 10px;
+    padding-top: 10px;
+    gap: 20px;
   }
 
   .hero-visual {
@@ -441,29 +458,33 @@ footer a:hover {
 
   .hero-lumina-writing {
     position: absolute;
-    top: 50%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: clamp(2.5rem, 12vw, 4rem);
     letter-spacing: 0.25em;
-    text-shadow: #514237 2px 3px 8px;
+    text-shadow: 0.02em 0.03em 0.06em rgba(81, 66, 55, 0.5);
     z-index: 20;
   }
 
   .hero-img {
-    width: 80%;
+    width: 90%;
     max-width: 300px;
     position: static;
     top: auto;
     left: auto;
     transform: none;
+    margin-top: 20%;
     z-index: 0;
   }
 
   .buy-now-btn {
     position: static;
     transform: none;
-    margin-top: 20px;
+    margin-top: 30px;
+  }
+  .buy-now-btn:hover {
+    transform: scale(1.05);
   }
 
   /* --- Produkt sektion --- */
