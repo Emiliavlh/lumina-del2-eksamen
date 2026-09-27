@@ -1,8 +1,3 @@
-/* ===== Fonts ===== */
-@import url("https://fonts.googleapis.com/css2?family=Krona+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Koulen&family=Krona+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inria+Sans:wght@300;400;700&display=swap");
-
 /* ===== Reset ===== */
 * {
   margin: 0;
@@ -447,38 +442,142 @@ body {
 
 .app {
   min-height: 100vh;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: white;
+  padding: 130px 24px 80px;
+}
+
+.app-title {
+  max-width: 960px;
+  margin: 0 auto 30px;
+  font-family: var(--overskrift-font);
+  font-size: clamp(1.3rem, 5vw, 2rem);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #40382e;
+}
+
+.app-columns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.app-info {
+  flex: 1;
+}
+
+.app-subtitle {
+  font-family: var(--brødtekst-font);
+  font-size: 22px;
+  font-weight: 700;
+  color: #40382e;
+  margin-bottom: 12px;
+}
+
+.app-description {
+  font-family: var(--brødtekst-font);
+  font-size: 16px;
+  color: #40382e;
+  margin-bottom: 24px;
+}
+
+.app-features {
+  list-style: none;
+  padding: 30px;
+  border-radius: 40px;
+  background: #473636;
+  color: white;
+}
+.app-features li {
+  font-family: var(--brødtekst-font);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.app-features li + li {
+  margin-top: 20px;
+}
+
+.app-showcase {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-shrink: 0;
+}
+
+.app-visual {
+  flex-shrink: 0;
+}
+.app-image {
+  display: block;
+  width: 220px;
+  max-width: 30vw;
+  height: auto;
+}
+
+.app-download {
+  text-align: left;
+}
+.app-download-label {
+  font-family: var(--brødtekst-font);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--font-farve);
+  margin-bottom: 16px;
+}
+
+.app-download-btn {
+  display: block;
+  width: 200px;
+  margin: 0 0 16px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 40px;
+  background: linear-gradient(to bottom, #473636, #AD8484);
+  color: white;
+  font-family: var(--brødtekst-font);
+  font-weight: 700;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.app-download-btn:hover {
+  transform: scale(1.05);
+}
+.app-download-btn:last-child {
+  margin-bottom: 0;
+}
+
+/* Rammer kun de to knapper, der har aria-disabled="true" sat i HTML'en
+   (dem der endnu ikke virker) - resten af knapperne er upåvirket.
+   Se W3Schools: https://www.w3schools.com/css/css_attribute_selectors.asp */
+.app-download-btn[aria-disabled="true"] {
+  opacity: 0.6; /* dæmper knappen, så den ser inaktiv ud */
+  cursor: not-allowed; /* viser "forbudt"-cursor ved museover */
+}
+.app-download-btn[aria-disabled="true"]:hover {
+  transform: none; /* fjerner hover-forstørrelsen for de deaktiverede knapper */
 }
 
 /* ===== Footer ===== */
 
 footer {
   background-color: #e7d2bd;
-  padding: 40px 60px;
-  min-height: 30vh;
+  padding: 40px 24px;
   color: black;
   font-family: var(--brødtekst-font);
 }
-footer table {
-  width: 100%;
-  border-collapse: collapse;
-}
-footer .col {
-  vertical-align: top;
-  padding-right: 40px;
+
+.footer-brand {
+  text-align: center;
+  margin-bottom: 40px;
 }
 footer h2.logo {
   font-size: 24px;
   letter-spacing: 2px;
   margin-bottom: 15px;
-}
-footer h3 {
-  font-size: 14px;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
 }
 footer p {
   font-size: 13px;
@@ -493,6 +592,105 @@ footer a:hover {
 }
 .mail {
   color: rgb(47, 39, 152);
+}
+
+.footer-columns {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-item {
+  border-top: 1px solid #40382e;
+}
+.footer-item:last-child {
+  border-bottom: 1px solid #40382e;
+}
+
+.footer-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 0;
+  background: none;
+  border: none;
+  font-family: var(--brødtekst-font);
+  font-size: 15px;
+  font-weight: 700;
+  color: black;
+  text-align: left;
+  cursor: pointer;
+}
+
+.footer-icon {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  transform: rotate(45deg);
+  margin-top: -4px;
+  transition: transform 0.3s ease;
+}
+.footer-toggle[aria-expanded="true"] .footer-icon {
+  transform: rotate(225deg);
+  margin-top: 4px;
+}
+
+.footer-panel {
+  padding-bottom: 16px;
+}
+
+/* ===== Responsivt: desktop (≥769px) ===== */
+@media (min-width: 769px) {
+  footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 60px 60px 50px;
+  }
+
+  .footer-brand {
+    flex: 1;
+    text-align: left;
+    margin-bottom: 0;
+  }
+  .footer-brand .logo {
+    font-size: 28px;
+  }
+
+  .footer-columns {
+    flex: 4;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .footer-item {
+    flex: 1;
+    border: none;
+  }
+  .footer-item:last-child {
+    border-bottom: none;
+  }
+
+  .footer-toggle {
+    padding: 0;
+    margin-bottom: 14px;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: default;
+  }
+
+  .footer-icon {
+    display: none;
+  }
+
+  .footer-panel {
+    display: block;
+    padding-bottom: 0;
+  }
 }
 
 /* ===== Responsivt: mobil (≤768px) ===== */
@@ -693,8 +891,52 @@ footer a:hover {
   }
 
   /* --- Specifikationer --- */
-  
   .specs {
     padding-top: 90px;
+    padding-bottom: 40px;
+  }
+
+  /* --- App --- */
+  .app {
+    padding-top: 90px;
+  }
+
+  .app-columns {
+    display: block;
+    max-width: none;
+  }
+
+  .app-info {
+    margin-bottom: 40px;
+  }
+
+  .app-features li {
+    position: relative;
+    padding-left: 18px;
+  }
+  .app-features li::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+  }
+
+  .app-showcase {
+    justify-content: center;
+    gap: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .app-image {
+    width: 150px;
+    max-width: 40vw;
+  }
+
+  .app-download-btn {
+    width: 140px;
+    padding: 12px 14px;
+    font-size: 13px;
+    margin: 0 0 12px;
   }
 }

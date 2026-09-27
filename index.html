@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title lang="en">Lumina Audio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Koulen&family=Krona+One&family=Inria+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"/>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
   </head>
@@ -125,7 +130,7 @@
       </article>
 
       <figure class="product-visual">
-        <img src="img/product.webp" alt="Lumina One højtaler" lang="en" class="product-image" />
+        <img src="img/product.webp" alt="Lumina One højtaler" lang="en" class="product-image" loading="lazy">
       </figure>
     </section>
 
@@ -282,24 +287,76 @@
     </section>
 
     <!-- App -->
-    <section class="app" id="app"></section>
+    <section class="app" id="app">
+      <h2 class="app-title">Hent appen</h2>
+
+      <div class="app-columns">
+        <div class="app-info">
+          <h3 class="app-subtitle" lang="en">LUMINA App</h3>
+          <p class="app-description">
+            Med appen styrer du nemt det hele fra telefonen:
+          </p>
+
+          <ul class="app-features">
+            <li><strong>Musik:</strong> Skift sange og skru op eller ned.</li>
+            <li><strong>Lys:</strong> Vælg stemning med ét tryk.</li>
+            <li>
+              <strong>Fællesfest:</strong> Sæt dine og vennernes playlister
+              sammen.
+            </li>
+          </ul>
+        </div>
+
+        <div class="app-showcase">
+          <figure class="app-visual">
+            <img
+              src="img/app-lumina.webp"
+              alt="Lumina-appen med afspilningsknap, lydstyrke og knapperne Blend Playlists og Chill"
+              class="app-image"
+            />
+          </figure>
+
+          <div class="app-download">
+            <p class="app-download-label">Download til:</p>
+            <a class="app-download-btn" aria-disabled="true" aria-label="Hent til iOS – knappen virker endnu ikke">Hent til <span lang="en">iOS</span></a>
+            <a class="app-download-btn" aria-disabled="true" aria-label="Hent til Android – knappen virker endnu ikke">Hent til <span lang="en">Android</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-      <table>
-        <tr>
-          <td class="col">
-            <h2 class="logo" lang="en">LUMINA<br />AUDIO</h2>
-            <p>
-              © 2025 <span lang="en">Lumina Audio</span>.<br />
-              Alle rettigheder forbeholdes.<br /><br />
-              Designet i Skandinavien.<br />
-              Inspireret af minimalisme.<br />
-              Skabt til stemning.
-            </p>
-          </td>
-          <td class="col">
-            <h3>KONTAKT</h3>
+      <div class="footer-brand">
+        <h2 class="logo" lang="en">LUMINA<br />AUDIO</h2>
+        <p>
+          © 2025 <span lang="en">Lumina Audio</span>.<br />
+          Alle rettigheder forbeholdes.<br /><br />
+          Designet i Skandinavien.<br />
+          Inspireret af minimalisme.<br />
+          Skabt til stemning.
+        </p>
+      </div>
+
+      <div class="footer-columns">
+        <div class="footer-item">
+          <button
+            type="button"
+            class="footer-toggle"
+            id="footerToggleKontakt"
+            aria-expanded="false"
+            aria-controls="footerPanelKontakt"
+          >
+            Kontakt
+            <span class="footer-icon" aria-hidden="true"></span>
+          </button>
+          <div
+            class="footer-panel"
+            id="footerPanelKontakt"
+            role="region"
+            aria-labelledby="footerToggleKontakt"
+            hidden
+          >
             <p>
               Kundeservice<br />
               Find os<br />
@@ -311,18 +368,54 @@
               ><br />
               +45 12 34 56 78
             </p>
-          </td>
-          <td class="col">
-            <h3>SERVICE</h3>
+          </div>
+        </div>
+
+        <div class="footer-item">
+          <button
+            type="button"
+            class="footer-toggle"
+            id="footerToggleService"
+            aria-expanded="false"
+            aria-controls="footerPanelService"
+          >
+            Service
+            <span class="footer-icon" aria-hidden="true"></span>
+          </button>
+          <div
+            class="footer-panel"
+            id="footerPanelService"
+            role="region"
+            aria-labelledby="footerToggleService"
+            hidden
+          >
             <p>
               Levering & retur<br />
               Garanti & reparation<br />
               FAQ<br />
               Brugervejledning
             </p>
-          </td>
-          <td class="col">
-            <h3>OM OS</h3>
+          </div>
+        </div>
+
+        <div class="footer-item">
+          <button
+            type="button"
+            class="footer-toggle"
+            id="footerToggleOmOs"
+            aria-expanded="false"
+            aria-controls="footerPanelOmOs"
+          >
+            Om Os
+            <span class="footer-icon" aria-hidden="true"></span>
+          </button>
+          <div
+            class="footer-panel"
+            id="footerPanelOmOs"
+            role="region"
+            aria-labelledby="footerToggleOmOs"
+            hidden
+          >
             <p>
               Om <span lang="en">Lumina Audio</span><br />
               Vores historie<br />
@@ -330,18 +423,36 @@
               Bæredygtighed<br />
               Presse
             </p>
-          </td>
-          <td class="col">
-            <h3>FØLG OS</h3>
+          </div>
+        </div>
+
+        <div class="footer-item">
+          <button
+            type="button"
+            class="footer-toggle"
+            id="footerToggleFoelgOs"
+            aria-expanded="false"
+            aria-controls="footerPanelFoelgOs"
+          >
+            Følg Os
+            <span class="footer-icon" aria-hidden="true"></span>
+          </button>
+          <div
+            class="footer-panel"
+            id="footerPanelFoelgOs"
+            role="region"
+            aria-labelledby="footerToggleFoelgOs"
+            hidden
+          >
             <p>
               Instagram<br />
               Facebook<br />
               TikTok<br />
               LinkedIn
             </p>
-          </td>
-        </tr>
-      </table>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="js/script.js"></script>

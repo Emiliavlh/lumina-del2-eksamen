@@ -85,3 +85,17 @@ specsToggles.forEach((toggle) => {
     panel.hidden = isOpen; // det er faktisk denne linje der viser/skjuler teksten
   });
 });
+
+// ---- Footer - fold ud/ind (kun mobil, css'en viser alt på desktop) ----
+// samme opskrift som Specifikationer herover
+const footerToggles = document.querySelectorAll(".footer-toggle");
+
+footerToggles.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const panel = document.getElementById(toggle.getAttribute("aria-controls"));
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    panel.hidden = isOpen;
+  });
+});
