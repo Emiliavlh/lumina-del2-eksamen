@@ -15,7 +15,7 @@ html {
   overflow-x: hidden;
 }
 
-/* Skjuler indhold visuelt, men lader skærmlæsere stadig læse det op */
+/* Skjuler indhold visuelt, men lader skærmlæsere stadig læse det op - f.eks brugt til h1*/
 .sr-only {
   position: absolute;
   width: 1px;
@@ -40,7 +40,8 @@ html {
   --brødtekst-font: "Inria Sans", sans-serif;
 }
 
-/* ===== Globalt ===== */
+/* ===== Generalle stylings på Landing page ===== */
+
 body {
   font-family: var(--brødtekst-font);
   background: linear-gradient(rgba(230, 211, 192, 1), white);
@@ -49,6 +50,7 @@ body {
 }
 
 /* ===== Navbar ===== */
+
 .navbar {
   width: 100%;
   padding: 15px 20px;
@@ -149,6 +151,7 @@ body {
 }
 
 /* ===== Hero sektion ===== */
+
 .hero-content {
   position: relative;
   display: flex;
@@ -205,6 +208,7 @@ body {
 }
 
 /* ===== Produkt sektion ===== */
+
 .product {
   display: flex;
   align-items: center;
@@ -247,6 +251,7 @@ body {
 }
 
 /* Farvevælger med streger */
+
 .color-selector {
   border-top: 2px solid #40382e;
   border-bottom: 2px solid #40382e;
@@ -311,6 +316,7 @@ body {
 }
 
 /* Knap: LÆG I KURV */
+
 .buy {
   display: inline-block;
   padding: 15px 40px;
@@ -331,6 +337,7 @@ body {
 }
 
 /* Produktbillede */
+
 .product-visual {
   flex-shrink: 0;
 }
@@ -341,6 +348,7 @@ body {
 }
 
 /* ===== Specifikationer ===== */
+
 .specs {
   min-height: 100vh;
   padding: 120px 24px 80px;
@@ -446,6 +454,7 @@ body {
 }
 
 /* ===== Footer ===== */
+
 footer {
   background-color: #e7d2bd;
   padding: 40px 60px;
@@ -487,7 +496,9 @@ footer a:hover {
 }
 
 /* ===== Responsivt: mobil (≤768px) ===== */
+
 @media (max-width: 768px) {
+
   /* --- Navbar --- */
   .logo-img {
   width: 80px;
@@ -546,6 +557,7 @@ footer a:hover {
   }
 
   /* --- Hero sektion --- */
+
   .hero-content {
     flex-direction: column;
     padding-top: 10px;
@@ -589,6 +601,7 @@ footer a:hover {
   }
 
   /* --- Produkt sektion --- */
+
   .product {
     display: flex;
     flex-direction: column;
@@ -680,6 +693,7 @@ footer a:hover {
   }
 
   /* --- Specifikationer --- */
+  
   .specs {
     padding-top: 90px;
   }
