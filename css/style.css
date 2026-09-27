@@ -197,8 +197,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 60px;
-  min-height: 100vh;
-  padding: 120px 5%;
+  padding: 60px 5%;
   margin: 0;
   position: relative;
   overflow: hidden;
@@ -328,14 +327,104 @@ body {
   height: auto;
 }
 
-/* ===== Andre sektioner ===== */
+/* ===== Specifikationer ===== */
 .specs {
   min-height: 100vh;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: var(--farve1);
+  padding: 120px 24px 80px;
 }
+
+.specs-title {
+  max-width: 960px;
+  margin: 0 auto 40px;
+  font-family: var(--overskrift-font);
+  font-size: clamp(1.3rem, 5vw, 2rem);
+  letter-spacing: 0.15em;
+  color: #40382e;
+}
+
+.specs-list {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.specs-item {
+  border-bottom: 1px solid #40382e;
+}
+.specs-item:first-child {
+  border-top: 1px solid #40382e;
+}
+
+.specs-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 22px 0;
+  background: none;
+  border: none;
+  font-family: var(--brødtekst-font);
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #40382e;
+  text-align: left;
+  cursor: pointer;
+}
+
+.specs-icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #40382e;
+  border-radius: 50%;
+}
+.specs-icon::before,
+.specs-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #40382e;
+  transition: transform 0.3s ease;
+}
+.specs-icon::before {
+  width: 10px;
+  height: 1px;
+  transform: translate(-50%, -50%);
+}
+.specs-icon::after {
+  width: 1px;
+  height: 10px;
+  transform: translate(-50%, -50%);
+}
+.specs-toggle[aria-expanded="true"] .specs-icon::after {
+  transform: translate(-50%, -50%) rotate(90deg) scale(0);
+}
+
+.specs-panel {
+  padding: 0 0 22px;
+}
+.specs-panel p {
+  font-family: var(--brødtekst-font);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #7a6a5c;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.specs-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.specs-image {
+  display: block;
+  width: 320px;
+  max-width: 80%;
+  margin: 60px auto 0;
+  height: auto;
+}
+
 .app {
   min-height: 100vh;
   background-size: contain;
@@ -494,7 +583,7 @@ footer a:hover {
     gap: 0;
     height: auto;
     min-height: auto;
-    padding: 100px 24px 60px;
+    padding: 100px 24px 30px;
     overflow: visible;
   }
 
@@ -560,7 +649,7 @@ footer a:hover {
     position: static;
     transform: none;
     display: block;
-    margin: 0 auto 50px;
+    margin: 0 auto 24px;
   }
   .buy:hover {
     transform: scale(1.05);
@@ -576,5 +665,10 @@ footer a:hover {
   .product-image {
     width: 85%;
     max-width: 320px;
+  }
+
+  /* --- Specifikationer --- */
+  .specs {
+    padding-top: 90px;
   }
 }
