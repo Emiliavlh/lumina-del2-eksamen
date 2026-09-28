@@ -10,7 +10,7 @@ if (burgerBtn && navLinks) {
   // open/close som to separate funktioner, så jeg kan kalde dem fra flere steder
   // (burger-knap, luk-knap, klik udenfor, escape - alle skal kunne lukke menuen)
   const openMenu = () => {
-    navLinks.classList.add("open"); // css'en flytter menuen ind på skærmen
+    navLinks.classList.add("open"); // css'en flytter menuen ind på skærmen (og gør den synlig/tastatur-venlig igen)
     navOverlay?.classList.add("open"); // det mørke lag bag menuen
     burgerBtn.setAttribute("aria-expanded", "true"); // skærmlæser skal vide at den er åben
   };
@@ -69,6 +69,86 @@ const buyNowBtn = document.getElementById("buyNowBtn");
 buyNowBtn?.addEventListener("click", () => {
   document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
 });
+
+// ---- Kurv ----
+const cartBtn = document.getElementById("cartBtn");
+const cartPanel = document.getElementById("cartPanel");
+const cartOverlay = document.getElementById("cartOverlay");
+const cartCloseBtn = document.getElementById("cartCloseBtn");
+const addToCartBtn = document.getElementById("addToCartBtn");
+
+if (cartBtn && cartPanel) {
+  const cartCount = document.getElementById("cartCount");
+  const cartItem = document.getElementById("cartItem");
+  const cartEmpty = document.getElementById("cartEmpty");
+  const cartQty = document.getElementById("cartQty");
+  const cartTotal = document.getElementById("cartTotal");
+  const cartTotalRow = document.getElementById("cartTotalRow");
+  const cartMinusBtn = document.getElementById("cartMinusBtn");
+  const cartPlusBtn = document.getElementById("cartPlusBtn");
+  const cartRemoveBtn = document.getElementById("cartRemoveBtn");
+
+  const PRICE = 1995;
+  let qty = 0; // kun ét produkt på hele siden, så antal i kurv = tal på badge
+
+  // opdaterer badge, kurv-varen og totalen ud fra qty
+  const renderCart = () => {
+    const hasItem = qty > 0;
+
+    cartCount.hidden = !hasItem;
+    cartCount.textContent = String(qty);
+
+    cartItem.hidden = !hasItem;
+    cartEmpty.hidden = hasItem;
+    cartTotalRow.hidden = !hasItem;
+
+    if (hasItem) {
+      cartQty.textContent = String(qty);
+      cartTotal.textContent = `DKK ${(PRICE * qty).toLocaleString("da-DK", { minimumFractionDigits: 2 })}`;
+    }
+  };
+
+  const openCart = () => {
+    cartPanel.classList.add("open"); // css'en gør den synlig og tastatur-venlig
+    cartOverlay.classList.add("open");
+  };
+  const closeCart = () => {
+    cartPanel.classList.remove("open");
+    cartOverlay.classList.remove("open");
+  };
+
+  cartBtn.addEventListener("click", openCart);
+  cartCloseBtn.addEventListener("click", closeCart);
+  cartOverlay.addEventListener("click", closeCart);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && cartPanel.classList.contains("open")) {
+      closeCart();
+      cartBtn.focus();
+    }
+  });
+
+  // "LÆG I KURV" lægger 1 i kurven (eller lægger endnu 1 oveni, hvis der allerede er noget)
+  addToCartBtn?.addEventListener("click", () => {
+    qty += 1;
+    renderCart();
+  });
+
+  cartPlusBtn.addEventListener("click", () => {
+    qty += 1;
+    renderCart();
+  });
+  cartMinusBtn.addEventListener("click", () => {
+    qty = Math.max(1, qty - 1);
+    renderCart();
+  });
+  cartRemoveBtn.addEventListener("click", () => {
+    qty = 0;
+    renderCart();
+  });
+
+  renderCart();
+}
 
 // ---- Fold ud/ind (Specifikationer + Footer) ----
 // begge sektioner bruger samme aria-expanded/aria-controls/hidden-mønster,

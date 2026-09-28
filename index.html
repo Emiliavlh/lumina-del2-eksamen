@@ -15,10 +15,9 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
   </head>
   <body>
-    <!-- Hero section med navbar -->
-    <section class="hero">
-      <header>
-        <nav class="navbar">
+    <!-- Header med navbar -->
+    <header>
+      <nav class="navbar">
           <div class="logo">
             <!-- width/height ≠ vist størrelse, css styrer stadig styling, det er bare så siden ikke hopper mens billedet loader -->
             <a href="#hero"><img
@@ -39,7 +38,7 @@
                   type="button"
                   aria-label="Luk menu"
                 >
-                  <img src="img/back.svg" alt="" width="44" height="44" class="close-menu-icon" />
+                  <img src="img/back.svg" alt="" width="44" height="44" class="close-menu-icon">
                 </button>
               </li>
               <li><a href="#products">PRODUKT</a></li>
@@ -55,39 +54,91 @@
               aria-expanded="false"
               aria-controls="navLinks"
             >
-              <img src="img/menu.svg" alt="" width="35" height="35" class="burger-icon" />
+              <img src="img/menu.svg" alt="" width="35" height="35" class="burger-icon">
             </button>
 
-            <img src="img/basket.svg" alt="Kurv" width="33" height="31" class="cart" />
+            <button type="button" class="cart-btn" id="cartBtn" aria-label="Åbn kurv">
+              <img src="img/basket.svg" alt="" width="33" height="31" class="cart">
+              <span class="cart-count" id="cartCount" hidden>0</span>
+            </button>
           </div>
 
           <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
         </nav>
+
+        <!-- Kurv-panel -->
+        <div class="cart-panel" id="cartPanel">
+          <div class="cart-panel-header">
+            <button type="button" class="cart-close" id="cartCloseBtn" aria-label="Luk kurv">
+              <img src="img/back.svg" alt="" width="24" height="24" class="cart-close-icon">
+            </button>
+            <span class="cart-panel-logo" lang="en">LUMINA<br />AUDIO</span>
+          </div>
+
+          <h2 class="cart-panel-title">Indkøbskurv</h2>
+
+          <div class="cart-item" id="cartItem" hidden>
+            <img
+              src="img/lumina-speaker.webp"
+              alt="Lumina One højtaler"
+              lang="en"
+              width="439"
+              height="659"
+              class="cart-item-image">
+
+            <div class="cart-item-details">
+              <div class="cart-item-top">
+                <span class="cart-item-name" lang="en">LUMINA One</span>
+                <span class="cart-item-price">1.995,00</span>
+              </div>
+              <p class="cart-item-color">Farve: Beige</p>
+              <div class="cart-item-controls">
+                <div class="cart-qty">
+                  <button type="button" class="cart-qty-btn" id="cartMinusBtn" aria-label="Færre">−</button>
+                  <span class="cart-qty-value" id="cartQty">1</span>
+                  <button type="button" class="cart-qty-btn" id="cartPlusBtn" aria-label="Flere">+</button>
+                </div>
+                <button type="button" class="cart-remove" id="cartRemoveBtn">Fjern</button>
+              </div>
+            </div>
+          </div>
+
+          <p class="cart-empty" id="cartEmpty">Din kurv er tom.</p>
+
+          <div class="cart-total" id="cartTotalRow" hidden>
+            <span>Total:</span>
+            <span id="cartTotal">DKK 1.995,00</span>
+          </div>
+        </div>
+        <div class="cart-overlay" id="cartOverlay"></div>
       </header>
 
-      <main class="hero-content">
-        <figure class="hero-visual">
-          <h1 class="hero-lumina-writing" lang="en">
-            LUMINA
-            <span class="sr-only" lang="da">– bærbar Bluetooth-højttaler fra <span lang="en">Lumina Audio</span></span>
-          </h1>
-          <!-- LCP-billedet - fetchpriority=high henter den først -->
-          <img
-            src="img/hero-pic.webp"
-            alt="Lumina One højtaler"
-            lang="en"
-            class="hero-img"
-            width="1000"
-            height="1173"
-            fetchpriority="high"
-          />
-        </figure>
-        <button type="button" class="buy-now-btn" id="buyNowBtn">KØB NU</button>
-      </main>
-    </section>
+    <main>
+      <!-- Hero sektion -->
+      <section class="hero">
+        <div class="hero-content">
+          <figure class="hero-visual">
+            <h1 class="hero-lumina-writing" lang="en">
+              LUMINA
+              <span class="sr-only" lang="da">– bærbar Bluetooth-højttaler fra <span lang="en">Lumina Audio</span></span>
+            </h1>
+            <!-- LCP-billedet - fetchpriority=high henter den først -->
+            <img
+              src="img/hero-pic.webp"
+              alt="Lumina One højtaler"
+              lang="en"
+              class="hero-img"
+              width="1000"
+              height="1173"
+              fetchpriority="high">
+          </figure>
+          <button type="button" class="buy-now-btn" id="buyNowBtn">KØB NU</button>
+        </div>
+      </section>
 
-    <!-- Produkt sektion -->
+      <!-- Produkt sektion -->
     <section id="products" class="product">
+      <h2 class="sr-only">Produkt</h2>
       <article class="product-info">
         <h2 class="product-title" lang="en">LUMINA <span class="product-model">ONE</span></h2>
 
@@ -137,7 +188,13 @@
       </article>
 
       <figure class="product-visual">
-        <img src="img/product.webp" alt="Lumina One højtaler" lang="en" class="product-image" width="1000" height="1077" loading="lazy">
+        <img src="img/product.webp"
+         alt="Lumina One højtaler" 
+         lang="en" 
+         class="product-image" 
+         width="1000" 
+         height="1077" 
+         loading="lazy">
       </figure>
     </section>
 
@@ -153,8 +210,8 @@
             class="specs-toggle"
             id="specsToggleLyd"
             aria-expanded="false"
-            aria-controls="specsPanelLyd"
-          >
+            aria-controls="specsPanelLyd">
+
             LYD
             <span class="specs-icon" aria-hidden="true"></span>
           </button>
@@ -163,8 +220,7 @@
             id="specsPanelLyd"
             role="region"
             aria-labelledby="specsToggleLyd"
-            hidden
-          >
+            hidden>
             <p>
               Op til 100 dB – nok til en strandfest eller park-picnic uden at
               være "for meget".
@@ -178,8 +234,8 @@
             class="specs-toggle"
             id="specsToggleStroem"
             aria-expanded="false"
-            aria-controls="specsPanelStroem"
-          >
+            aria-controls="specsPanelStroem">
+
             STRØM
             <span class="specs-icon" aria-hidden="true"></span>
           </button>
@@ -188,8 +244,7 @@
             id="specsPanelStroem"
             role="region"
             aria-labelledby="specsToggleStroem"
-            hidden
-          >
+            hidden>
             <p>
               Op til 18 timers spilletid – genopladeligt batteri via USB-C.
             </p>
@@ -202,8 +257,8 @@
             class="specs-toggle"
             id="specsToggleDesign"
             aria-expanded="false"
-            aria-controls="specsPanelDesign"
-          >
+            aria-controls="specsPanelDesign">
+
             DESIGN
             <span class="specs-icon" aria-hidden="true"></span>
           </button>
@@ -212,8 +267,7 @@
             id="specsPanelDesign"
             role="region"
             aria-labelledby="specsToggleDesign"
-            hidden
-          >
+            hidden>
             <p>
               Vægt: kun 1,5 kg – nem at tage med i hånden eller i den
               medfølgende stof-<span lang="en">tote bag</span>.
@@ -232,8 +286,8 @@
             class="specs-toggle"
             id="specsToggleTilslutning"
             aria-expanded="false"
-            aria-controls="specsPanelTilslutning"
-          >
+            aria-controls="specsPanelTilslutning">
+
             TILSLUTNING
             <span class="specs-icon" aria-hidden="true"></span>
           </button>
@@ -242,8 +296,7 @@
             id="specsPanelTilslutning"
             role="region"
             aria-labelledby="specsToggleTilslutning"
-            hidden
-          >
+            hidden>
             <p>
               Bluetooth 5.3, aux-indgang og mulighed for at parre til 3 andre
               <span lang="en">Lumina One</span>-enheder.
@@ -257,8 +310,8 @@
             class="specs-toggle"
             id="specsToggleFunktioner"
             aria-expanded="false"
-            aria-controls="specsPanelFunktioner"
-          >
+            aria-controls="specsPanelFunktioner">
+
             FUNKTIONER
             <span class="specs-icon" aria-hidden="true"></span>
           </button>
@@ -267,8 +320,7 @@
             id="specsPanelFunktioner"
             role="region"
             aria-labelledby="specsToggleFunktioner"
-            hidden
-          >
+            hidden>
             <p>
               Lysstemning: integreret ambient-lys (kan tilpasses – fx
               <span lang="en">"chill", "party"</span> eller
@@ -292,8 +344,7 @@
         width="700"
         height="870"
         loading="lazy"
-        class="specs-image"
-      />
+        class="specs-image">
     </section>
 
     <!-- App -->
@@ -325,18 +376,18 @@
               width="494"
               height="984"
               loading="lazy"
-              class="app-image"
-            />
+              class="app-image">
           </figure>
 
           <div class="app-download">
             <p class="app-download-label">Download til:</p>
-            <a class="app-download-btn" aria-disabled="true" aria-label="Hent til iOS – knappen virker endnu ikke">Hent til <span lang="en">iOS</span></a>
-            <a class="app-download-btn" aria-disabled="true" aria-label="Hent til Android – knappen virker endnu ikke">Hent til <span lang="en">Android</span></a>
+            <a href="#" class="app-download-btn" aria-disabled="true" aria-label="Hent til iOS – knappen virker endnu ikke">Hent til <span lang="en">iOS</span></a>
+            <a href="#" class="app-download-btn" aria-disabled="true" aria-label="Hent til Android – knappen virker endnu ikke">Hent til <span lang="en">Android</span></a>
           </div>
         </div>
       </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -373,8 +424,8 @@
             <p>
               Kundeservice<br />
               Find os<br />
-              Job & karriere<br />
-              Presse & PR<br /><br />
+              Job og karriere<br />
+              Presse og PR<br /><br />
               Kontakt:<br />
               <a href="mailto:support@luminaaudio.com" class="mail"
                 >support@luminaaudio.com</a
@@ -403,8 +454,8 @@
             hidden
           >
             <p>
-              Levering & retur<br />
-              Garanti & reparation<br />
+              Levering og retur<br />
+              Garanti og reparation<br />
               FAQ<br />
               Brugervejledning
             </p>

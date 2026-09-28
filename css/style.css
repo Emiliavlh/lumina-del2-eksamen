@@ -137,13 +137,230 @@ body {
   display: none;
 }
 
+.cart-btn {
+  position: relative;
+  display: inline-flex;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
 .cart {
   width: 24px;
   height: auto;
   transition: 0.3s ease;
 }
-.cart:hover {
+.cart-btn:hover .cart {
   transform: scale(1.1);
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--font-farve);
+  color: white;
+  font-family: var(--brødtekst-font);
+  font-size: 11px;
+  line-height: 1;
+}
+.cart-count[hidden] {
+  display: none;
+}
+
+/* ---- Kurv-panel ---- */
+.cart-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 420px;
+  height: 100vh;
+  padding: 24px;
+  background: var(--farve3);
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  visibility: hidden; /* fjerner knapperne indeni fra tab-rækkefølgen, mens den er lukket */
+  transition: transform 0.3s ease, visibility 0s linear 0.3s;
+  z-index: 30;
+  overflow-y: auto;
+}
+.cart-panel.open {
+  transform: translateX(0);
+  visibility: visible; /* gør den synlig/tastatur-venlig med det samme, den åbnes */
+  transition: transform 0.3s ease;
+}
+
+.cart-panel-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.cart-close {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  margin-left: -10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.cart-close-icon {
+  width: 22px;
+  height: auto;
+}
+
+.cart-panel-logo {
+  font-family: var(--logo-font);
+  font-size: 16px;
+  letter-spacing: 3px;
+  line-height: 1.3;
+  text-align: center;
+  color: var(--font-farve);
+}
+
+.cart-panel-title {
+  font-family: var(--overskrift-font);
+  font-size: 22px;
+  letter-spacing: 0.05em;
+  color: var(--font-farve2);
+  margin-bottom: 20px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: var(--farve1);
+  border-radius: 16px;
+}
+.cart-item[hidden] {
+  display: none;
+}
+
+.cart-item-image {
+  width: 80px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.cart-item-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.cart-item-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: var(--brødtekst-font);
+}
+.cart-item-name {
+  font-weight: 700;
+  color: var(--font-farve2);
+}
+.cart-item-price {
+  font-weight: 700;
+  color: var(--font-farve2);
+  white-space: nowrap;
+}
+
+.cart-item-color {
+  font-family: var(--brødtekst-font);
+  font-size: 13px;
+  color: var(--font-farve2);
+  margin: 6px 0 16px;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 6px 12px;
+  border: 1px solid var(--font-farve2);
+  border-radius: 30px;
+}
+.cart-qty-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--font-farve2);
+  cursor: pointer;
+}
+.cart-qty-value {
+  font-family: var(--brødtekst-font);
+  min-width: 12px;
+  text-align: center;
+}
+
+.cart-remove {
+  background: none;
+  border: none;
+  font-family: var(--brødtekst-font);
+  font-size: 13px;
+  text-decoration: underline;
+  color: var(--font-farve2);
+  cursor: pointer;
+}
+
+.cart-empty {
+  font-family: var(--brødtekst-font);
+  color: var(--font-farve2);
+}
+.cart-empty[hidden] {
+  display: none;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--font-farve2);
+  font-family: var(--brødtekst-font);
+  font-weight: 700;
+  color: var(--font-farve2);
+}
+.cart-total[hidden] {
+  display: none;
+}
+
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 29;
+}
+.cart-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* ===== Hero sektion ===== */
@@ -726,11 +943,14 @@ footer a:hover {
     background: var(--farve3);
     box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
     transform: translateX(100%);
-    transition: transform 0.3s ease;
+    visibility: hidden; /* fjerner links/knap indeni fra tab-rækkefølgen, mens den er lukket */
+    transition: transform 0.3s ease, visibility 0s linear 0.3s;
     z-index: 25;
   }
   .nav-links.open {
     transform: translateX(0);
+    visibility: visible; /* gør den synlig/tastatur-venlig med det samme, den åbnes */
+    transition: transform 0.3s ease;
   }
 
   .nav-links-close {
