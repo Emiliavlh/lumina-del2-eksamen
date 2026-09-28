@@ -649,6 +649,21 @@ body {
 .specs-panel p:last-child {
   margin-bottom: 0;
 }
+.specs-panel ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.specs-panel li {
+  font-family: var(--brødtekst-font);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  color: var(--font-farve);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.specs-panel li:last-child {
+  margin-bottom: 0;
+}
 
 .specs-image {
   display: block;
