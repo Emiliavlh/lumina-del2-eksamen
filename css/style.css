@@ -29,6 +29,7 @@ html {
   --farve2: #e1d3c2;
   --farve3: #f0e4d9;
   --font-farve: #514237;
+  --font-farve2: #40382e;
 
   --logo-font: "Koulen", sans-serif;
   --overskrift-font: "Krona One", sans-serif;
@@ -224,7 +225,7 @@ body {
 .product-title {
   font-size: 50px;
   font-family: var(--logo-font);
-  color: #40382e;
+  color: var(--font-farve2);
   letter-spacing: 10px;
 }
 .product-model {
@@ -237,7 +238,7 @@ body {
 .product-description {
   font-family: var(--brødtekst-font);
   font-size: 16px;
-  color: #40382e;
+  color: var(--font-farve2);
   margin: 20px 0;
 }
 
@@ -248,8 +249,8 @@ body {
 /* Farvevælger med streger */
 
 .color-selector {
-  border-top: 2px solid #40382e;
-  border-bottom: 2px solid #40382e;
+  border-top: 2px solid var(--font-farve2);
+  border-bottom: 2px solid var(--font-farve2);
   padding: 15px 0;
   display: flex;
   align-items: center;
@@ -273,7 +274,7 @@ body {
   width: 44px;
   height: 44px;
   padding: 0;
-  border: 1px solid #40382e;
+  border: 1px solid var(--font-farve2);
   border-radius: 50%;
   background: none;
   font-family: var(--brødtekst-font);
@@ -282,7 +283,7 @@ body {
   text-transform: uppercase;
   text-align: center;
   line-height: 1;
-  color: #40382e;
+  color: var(--font-farve2);
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -307,7 +308,7 @@ body {
   margin: 20px 0;
   font-family: var(--brødtekst-font);
   font-size: 24px;
-  color: #40382e;
+  color: var(--font-farve2);
 }
 
 /* Knap: LÆG I KURV */
@@ -355,7 +356,7 @@ body {
   font-family: var(--overskrift-font);
   font-size: clamp(1.3rem, 5vw, 2rem);
   letter-spacing: 0.15em;
-  color: #40382e;
+  color: var(--font-farve2);
 }
 
 .specs-list {
@@ -364,10 +365,10 @@ body {
 }
 
 .specs-item {
-  border-bottom: 1px solid #40382e;
+  border-bottom: 1px solid var(--font-farve2);
 }
 .specs-item:first-child {
-  border-top: 1px solid #40382e;
+  border-top: 1px solid var(--font-farve2);
 }
 
 .specs-toggle {
@@ -381,7 +382,7 @@ body {
   font-family: var(--brødtekst-font);
   font-size: 14px;
   letter-spacing: 2px;
-  color: #40382e;
+  color: var(--font-farve2);
   text-align: left;
   cursor: pointer;
 }
@@ -391,7 +392,7 @@ body {
   flex-shrink: 0;
   width: 24px;
   height: 24px;
-  border: 1px solid #40382e;
+  border: 1px solid var(--font-farve2);
   border-radius: 50%;
 }
 .specs-icon::before,
@@ -400,7 +401,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  background: #40382e;
+  background: var(--font-farve2);
   transition: transform 0.3s ease;
 }
 .specs-icon::before {
@@ -452,7 +453,7 @@ body {
   font-size: clamp(1.3rem, 5vw, 2rem);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #40382e;
+  color: var(--font-farve2);
 }
 
 .app-columns {
@@ -472,14 +473,14 @@ body {
   font-family: var(--brødtekst-font);
   font-size: 22px;
   font-weight: 700;
-  color: #40382e;
+  color: var(--font-farve2);
   margin-bottom: 12px;
 }
 
 .app-description {
   font-family: var(--brødtekst-font);
   font-size: 16px;
-  color: #40382e;
+  color: var(--font-farve2);
   margin-bottom: 24px;
 }
 
@@ -600,10 +601,10 @@ footer a:hover {
 }
 
 .footer-item {
-  border-top: 1px solid #40382e;
+  border-top: 1px solid var(--font-farve2);
 }
 .footer-item:last-child {
-  border-bottom: 1px solid #40382e;
+  border-bottom: 1px solid var(--font-farve2);
 }
 
 .footer-toggle {

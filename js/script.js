@@ -70,11 +70,10 @@ buyNowBtn?.addEventListener("click", () => {
   document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
 });
 
-// ---- Specifikationer - fold ud/ind ----
-// alle 5 knapper (Lyd, Strøm, Design osv.) får samme klik-logik
-const specsToggles = document.querySelectorAll(".specs-toggle");
-
-specsToggles.forEach((toggle) => {
+// ---- Fold ud/ind (Specifikationer + Footer) ----
+// begge sektioner bruger samme aria-expanded/aria-controls/hidden-mønster,
+// så de kan dele den samme klik-logik i stedet for at gentage koden to gange
+document.querySelectorAll(".specs-toggle, .footer-toggle").forEach((toggle) => {
   toggle.addEventListener("click", () => {
     // aria-controls på knappen peger på id'et på det panel den styrer
     const panel = document.getElementById(toggle.getAttribute("aria-controls"));
@@ -83,19 +82,5 @@ specsToggles.forEach((toggle) => {
     // vend det hele om - var den åben, lukkes den, og omvendt
     toggle.setAttribute("aria-expanded", String(!isOpen));
     panel.hidden = isOpen; // det er faktisk denne linje der viser/skjuler teksten
-  });
-});
-
-// ---- Footer - fold ud/ind (kun mobil, css'en viser alt på desktop) ----
-// samme opskrift som Specifikationer herover
-const footerToggles = document.querySelectorAll(".footer-toggle");
-
-footerToggles.forEach((toggle) => {
-  toggle.addEventListener("click", () => {
-    const panel = document.getElementById(toggle.getAttribute("aria-controls"));
-    const isOpen = toggle.getAttribute("aria-expanded") === "true";
-
-    toggle.setAttribute("aria-expanded", String(!isOpen));
-    panel.hidden = isOpen;
   });
 });
