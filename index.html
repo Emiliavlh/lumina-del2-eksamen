@@ -4,8 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title lang="en">Lumina Audio</title>
+    <!-- preconnect til font-domænerne, så de er klar til brug -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- googleapis = css, gstatic = selve font-filerne -->
     <link
       href="https://fonts.googleapis.com/css2?family=Koulen&family=Krona+One&family=Inria+Sans:wght@300;400;700&display=swap"
       rel="stylesheet"/>
@@ -18,13 +20,14 @@
       <header>
         <nav class="navbar">
           <div class="logo">
-            <a href="#hero"
-              ><img
+            <!-- width/height ≠ vist størrelse, css styrer stadig styling, det er bare så siden ikke hopper mens billedet loader -->
+            <a href="#hero"><img
                 src="img/lumina-logo.webp"
                 alt="Lumina Audio logo"
                 lang="en"
-                class="logo-img"
-            /></a>
+                width="459"
+                height="274"
+                class="logo-img"></a>
           </div>
 
           <div class="nav-right">
@@ -36,7 +39,7 @@
                   type="button"
                   aria-label="Luk menu"
                 >
-                  <img src="img/back.svg" alt="" class="close-menu-icon" />
+                  <img src="img/back.svg" alt="" width="44" height="44" class="close-menu-icon" />
                 </button>
               </li>
               <li><a href="#products">PRODUKT</a></li>
@@ -52,10 +55,10 @@
               aria-expanded="false"
               aria-controls="navLinks"
             >
-              <img src="img/menu.svg" alt="" class="burger-icon" />
+              <img src="img/menu.svg" alt="" width="35" height="35" class="burger-icon" />
             </button>
 
-            <img src="img/basket.svg" alt="Kurv" class="cart" />
+            <img src="img/basket.svg" alt="Kurv" width="33" height="31" class="cart" />
           </div>
 
           <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
@@ -68,11 +71,15 @@
             LUMINA
             <span class="sr-only" lang="da">– bærbar Bluetooth-højttaler fra <span lang="en">Lumina Audio</span></span>
           </h1>
+          <!-- LCP-billedet - fetchpriority=high henter den først -->
           <img
             src="img/hero-pic.webp"
             alt="Lumina One højtaler"
             lang="en"
             class="hero-img"
+            width="1000"
+            height="1173"
+            fetchpriority="high"
           />
         </figure>
         <button type="button" class="buy-now-btn" id="buyNowBtn">KØB NU</button>
@@ -130,7 +137,7 @@
       </article>
 
       <figure class="product-visual">
-        <img src="img/product.webp" alt="Lumina One højtaler" lang="en" class="product-image" loading="lazy">
+        <img src="img/product.webp" alt="Lumina One højtaler" lang="en" class="product-image" width="1000" height="1077" loading="lazy">
       </figure>
     </section>
 
@@ -279,9 +286,12 @@
       </div>
 
       <img
-        src="img/lumina-speaker.webp"
+        src="img/3d-pic-speaker.webp"
         alt="Lumina One højtaler"
         lang="en"
+        width="700"
+        height="870"
+        loading="lazy"
         class="specs-image"
       />
     </section>
@@ -312,6 +322,9 @@
             <img
               src="img/app-lumina.webp"
               alt="Lumina-appen med afspilningsknap, lydstyrke og knapperne Blend Playlists og Chill"
+              width="494"
+              height="984"
+              loading="lazy"
               class="app-image"
             />
           </figure>
