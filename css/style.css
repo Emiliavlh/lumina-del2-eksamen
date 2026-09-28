@@ -86,6 +86,10 @@ body {
 }
 
 .nav-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 4px;
   font-family: var(--brødtekst-font);
   font-size: 14px;
   text-decoration: none;
